@@ -26,5 +26,10 @@ namespace GestorDeEstudantes
         {
 
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
