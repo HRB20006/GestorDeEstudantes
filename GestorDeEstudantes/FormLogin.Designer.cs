@@ -1,6 +1,6 @@
 ﻿namespace GestorDeEstudantes
 {
-    partial class Login_Form
+    partial class FormLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelSenha = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             this.textBoxUser.Size = new System.Drawing.Size(215, 31);
             this.textBoxUser.TabIndex = 7;
             // 
-            // Login_Form
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.labelSenha);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonLogin);
-            this.Name = "Login_Form";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor";
             this.Load += new System.EventHandler(this.Login_Form_Load);

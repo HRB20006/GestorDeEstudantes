@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GestorDeEstudantes
 {
-    public partial class Login_Form : Form
+    public partial class FormLogin : Form
     {
-        public Login_Form()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace GestorDeEstudantes
             mySqlDataAdapter.Fill(tabelaDeDados);
             if (tabelaDeDados.Rows.Count > 0)
             {
-                MessageBox.Show("SIM");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
