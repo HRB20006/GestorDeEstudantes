@@ -64,6 +64,7 @@
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancelar";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelSenha
             // 
@@ -114,6 +115,7 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(195, 31);
             this.textBoxSenha.TabIndex = 6;
+            this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // textBoxUser
             // 
