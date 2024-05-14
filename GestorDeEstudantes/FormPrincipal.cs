@@ -21,5 +21,36 @@ namespace GestorDeEstudantes
         {
 
         }
+
+        private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inserir inserir = new Inserir();
+            inserir.Show(this);
+        }
+
+        private void listarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void estatisticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

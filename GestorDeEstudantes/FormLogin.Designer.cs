@@ -115,6 +115,7 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(195, 31);
             this.textBoxSenha.TabIndex = 6;
+            this.textBoxSenha.Text = "Admin";
             this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // textBoxUser
@@ -125,6 +126,7 @@
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(215, 31);
             this.textBoxUser.TabIndex = 7;
+            this.textBoxUser.Text = "Admin";
             // 
             // FormLogin
             // 
@@ -141,7 +143,7 @@
             this.Controls.Add(this.buttonLogin);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestor";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
