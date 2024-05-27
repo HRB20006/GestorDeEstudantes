@@ -46,7 +46,7 @@
             this.pictureBoxAluno = new System.Windows.Forms.PictureBox();
             this.buttonEnviar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCadas = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAluno)).BeginInit();
             this.SuspendLayout();
@@ -222,24 +222,25 @@
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonCadas
             // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(46, 308);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 47);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Cadastrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonCadas.BackColor = System.Drawing.Color.Lime;
+            this.buttonCadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCadas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonCadas.Location = new System.Drawing.Point(46, 308);
+            this.buttonCadas.Name = "buttonCadas";
+            this.buttonCadas.Size = new System.Drawing.Size(172, 47);
+            this.buttonCadas.TabIndex = 20;
+            this.buttonCadas.Text = "Cadastrar";
+            this.buttonCadas.UseVisualStyleBackColor = false;
+            this.buttonCadas.Click += new System.EventHandler(this.buttonCadas_Click);
             // 
             // Inserir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 367);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonCadas);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonEnviar);
             this.Controls.Add(this.pictureBoxAluno);
@@ -287,6 +288,6 @@
         private System.Windows.Forms.PictureBox pictureBoxAluno;
         private System.Windows.Forms.Button buttonEnviar;
         private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCadas;
     }
 }

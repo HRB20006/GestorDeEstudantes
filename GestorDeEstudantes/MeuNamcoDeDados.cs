@@ -29,7 +29,7 @@ namespace GestorDeEstudantes
         {
             if (conexao.State == ConnectionState.Open)
             {
-                conexao.Clone();
+                conexao.Close();
             }
         }
     }

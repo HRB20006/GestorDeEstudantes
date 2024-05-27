@@ -30,7 +30,8 @@ namespace GestorDeEstudantes
 
         private void listarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormListarEstudantes formListarEstudantes = new FormListarEstudantes();
+            formListarEstudantes.Show(this);
         }
 
         private void estatisticasToolStripMenuItem_Click(object sender, EventArgs e)
