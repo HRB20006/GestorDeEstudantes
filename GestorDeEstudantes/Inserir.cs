@@ -41,11 +41,11 @@ namespace GestorDeEstudantes
             int Birthday = dateTimePickerNasc.Value.Year;
             int todayDate = DateTime.Now.Year;
 
-            if ((todayDate - todayDate) < 10 || (todayDate - Birthday) > 100)
+            if ((todayDate - Birthday) < 10 || (todayDate - Birthday) > 100)
             {
                 MessageBox.Show("Idade do aluno inválida.", "Data de nascimento inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (verifica())
+            else if (Verificar())
             {
                 pictureBoxAluno.Image.Save(foto, pictureBoxAluno.Image.RawFormat);
                 if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, genero, endereco, foto))
@@ -60,6 +60,39 @@ namespace GestorDeEstudantes
             else
             {
                 MessageBox.Show("Informações inválidas", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+         
+        }
+
+        private void buttonEnviar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog procurarFoto = new OpenFileDialog();
+
+            procurarFoto.Filter = "Selecione a foto (*.jpg;*.png;*.jpeg;*.gif)|*.jpg;*.png;*.jpeg;*.gif";
+
+            if (procurarFoto.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxAluno.Image = Image.FromFile(procurarFoto.FileName);
+            }
+        }
+        bool Verificar()
+        {
+            if ((textBoxNome.Text.Trim() == "") ||
+               (textBoxSobre.Text.Trim() == "") ||
+               (textBoxTel.Text.Trim() == "") ||
+               (textBoxEnde.Text.Trim() == "") ||
+               (pictureBoxAluno.Image == null))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

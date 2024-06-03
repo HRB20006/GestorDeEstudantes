@@ -35,11 +35,14 @@
             // 
             // dataGridViewLista
             // 
+            this.dataGridViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLista.Location = new System.Drawing.Point(1, 2);
             this.dataGridViewLista.Name = "dataGridViewLista";
             this.dataGridViewLista.Size = new System.Drawing.Size(800, 377);
             this.dataGridViewLista.TabIndex = 0;
+            this.dataGridViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLista_CellContentClick_1);
+            this.dataGridViewLista.DoubleClick += new System.EventHandler(this.dataGridViewLista_DoubleClick);
             // 
             // buttonAtua
             // 
@@ -52,6 +55,7 @@
             this.buttonAtua.TabIndex = 1;
             this.buttonAtua.Text = "Atualizar";
             this.buttonAtua.UseVisualStyleBackColor = false;
+            this.buttonAtua.Click += new System.EventHandler(this.buttonAtua_Click);
             // 
             // FormListarEstudantes
             // 

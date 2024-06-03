@@ -209,6 +209,7 @@
             this.buttonEnviar.TabIndex = 18;
             this.buttonEnviar.Text = "Enviar Foto";
             this.buttonEnviar.UseVisualStyleBackColor = false;
+            this.buttonEnviar.Click += new System.EventHandler(this.buttonEnviar_Click);
             // 
             // buttonCancelar
             // 
@@ -221,6 +222,7 @@
             this.buttonCancelar.TabIndex = 19;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonCadas
             // 
