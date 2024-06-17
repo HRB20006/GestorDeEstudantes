@@ -65,6 +65,7 @@
             this.buttonSalvar.TabIndex = 37;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonApagar
             // 
@@ -77,6 +78,7 @@
             this.buttonApagar.TabIndex = 36;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = false;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonEnviarFoto
             // 
