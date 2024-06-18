@@ -17,7 +17,7 @@ namespace GestorDeEstudantes
         {
             InitializeComponent();
         }
-
+        Estudante estudante = new Estudante();
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -64,7 +64,7 @@ namespace GestorDeEstudantes
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            Estudante estudante = new Estudante();
+            
             int id = Convert.ToInt32(textBoxId.Text); 
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobre.Text;
@@ -125,7 +125,25 @@ namespace GestorDeEstudantes
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            int idDoAluno = Convert.ToInt32(textBoxId.Text);
+            if (MessageBox.Show("Tem certeza que deseja pagar o aluno em questão?",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes )
+            {
+                if (estudante.apagarEstudante(idDoAluno))
+                {
+                    MessageBox.Show("Aluno apagado.", "Apagar aluno.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBoxId.Text = "";
+                    textBoxNome.Text = "";
+                    textBoxSobre.Text = "";
+                    textBoxEnde.Text = "";
+                    textBoxTel.Text = "";
+                    dateTimePickerNasc.Value = ;
+                    pictureBoxAluno.Image = ;
+                }
+                else 
+                {
+                    
+                }
+            }
         }
     }
 }
