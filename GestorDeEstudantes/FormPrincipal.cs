@@ -41,7 +41,8 @@ namespace GestorDeEstudantes
 
         private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAtualizarApagarEstudante formAtualizarApagarEstudante = new FormAtualizarApagarEstudante();
+            formAtualizarApagarEstudante.Show(this);
         }
 
         private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)

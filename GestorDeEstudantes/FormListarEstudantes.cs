@@ -64,7 +64,14 @@ namespace GestorDeEstudantes
 
         private void buttonAtua_Click(object sender, EventArgs e)
         {
-
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`");
+            dataGridViewLista.ReadOnly = true;
+            DataGridViewImageColumn coluna = new DataGridViewImageColumn();
+            dataGridViewLista.RowTemplate.Height = 80;
+            dataGridViewLista.DataSource = estudante.pegarAlunos(comando);
+            coluna = (DataGridViewImageColumn)dataGridViewLista.Columns[7];
+            coluna.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewLista.AllowUserToAddRows = false;
         }
     }
 }

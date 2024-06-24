@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace GestorDeEstudantes
             InitializeComponent();
         }
         Estudante estudante = new Estudante();
+        MeuNamcoDeDados meuNamcoDeDados = new MeuNamcoDeDados();
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -59,7 +61,29 @@ namespace GestorDeEstudantes
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            int idDoAluno = Convert.ToInt32(textBoxId.Text);
+            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `ìd` =@idDoAluno", meuNamcoDeDados.getConexao);
+            DataTable tabela = estudante.pegarAlunos(comando);
+            comando.Parameters.Add("@idDoAluno", MySqlDbType.Int32).Value = idDoAluno;
+            if (tabela.Rows.Count > 0)
+            {
+                textBoxNome.Text = tabela.Rows[0]["Nome"].ToString();
+                textBoxSobre.Text = tabela.Rows[0]["Sobenome"].ToString();
+                textBoxTel.Text = tabela.Rows[0]["Telefone"].ToString();
+                textBoxEnde.Text = tabela.Rows[0]["Endereco"].ToString();
+                dateTimePickerNasc.Value = (DateTime)tabela.Rows[0]["Nascimento"];
+                if (tabela.Rows[0]["Genero"].ToString() == "Feminino")
+                {
+                    radioButtonFem.Checked = true;
+                }
+                else
+                {
+                    radioButtonMasc.Checked = true;
+                }
+                byte[] foto = (byte[]) tabela.Rows[0]["Foto"];
+                MemoryStream fotostream = new MemoryStream(foto);
+                pictureBoxAluno.Image = Image.FromStream(fotostream);
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -126,7 +150,7 @@ namespace GestorDeEstudantes
         private void buttonApagar_Click(object sender, EventArgs e)
         {
             int idDoAluno = Convert.ToInt32(textBoxId.Text);
-            if (MessageBox.Show("Tem certeza que deseja pagar o aluno em questão?",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes )
+            if (MessageBox.Show("Tem certeza que deseja pagar o aluno em questão?","Apagar", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes )
             {
                 if (estudante.apagarEstudante(idDoAluno))
                 {
@@ -136,12 +160,12 @@ namespace GestorDeEstudantes
                     textBoxSobre.Text = "";
                     textBoxEnde.Text = "";
                     textBoxTel.Text = "";
-                    dateTimePickerNasc.Value = ;
-                    pictureBoxAluno.Image = ;
+                    dateTimePickerNasc.Value = DateTime.Now;
+                    pictureBoxAluno.Image = null;
                 }
                 else 
                 {
-                    
+                    MessageBox.Show("Aluno não apagado!","Apagar Estudante", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
         }
