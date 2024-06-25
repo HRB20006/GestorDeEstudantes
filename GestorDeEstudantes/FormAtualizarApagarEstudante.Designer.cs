@@ -259,6 +259,7 @@
             this.textBoxId.Size = new System.Drawing.Size(144, 28);
             this.textBoxId.TabIndex = 38;
             this.textBoxId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxId_KeyPress);
             // 
             // buttonBuscar
             // 

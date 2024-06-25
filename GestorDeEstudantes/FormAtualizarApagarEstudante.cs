@@ -61,28 +61,34 @@ namespace GestorDeEstudantes
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int idDoAluno = Convert.ToInt32(textBoxId.Text);
-            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `ìd` =@idDoAluno", meuNamcoDeDados.getConexao);
-            DataTable tabela = estudante.pegarAlunos(comando);
-            comando.Parameters.Add("@idDoAluno", MySqlDbType.Int32).Value = idDoAluno;
-            if (tabela.Rows.Count > 0)
+            try
             {
-                textBoxNome.Text = tabela.Rows[0]["Nome"].ToString();
-                textBoxSobre.Text = tabela.Rows[0]["Sobenome"].ToString();
-                textBoxTel.Text = tabela.Rows[0]["Telefone"].ToString();
-                textBoxEnde.Text = tabela.Rows[0]["Endereco"].ToString();
-                dateTimePickerNasc.Value = (DateTime)tabela.Rows[0]["Nascimento"];
-                if (tabela.Rows[0]["Genero"].ToString() == "Feminino")
+                int idDoAluno = Convert.ToInt32(textBoxId.Text);
+                MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `ìd` =@idDoAluno", meuNamcoDeDados.getConexao);
+                DataTable tabela = estudante.pegarAlunos(comando);
+                comando.Parameters.Add("@idDoAluno", MySqlDbType.Int32).Value = idDoAluno;
+                if (tabela.Rows.Count > 0)
                 {
-                    radioButtonFem.Checked = true;
+                    textBoxNome.Text = tabela.Rows[0]["Nome"].ToString();
+                    textBoxSobre.Text = tabela.Rows[0]["Sobenome"].ToString();
+                    textBoxTel.Text = tabela.Rows[0]["Telefone"].ToString();
+                    textBoxEnde.Text = tabela.Rows[0]["Endereco"].ToString();
+                    dateTimePickerNasc.Value = (DateTime)tabela.Rows[0]["Nascimento"];
+                    if (tabela.Rows[0]["Genero"].ToString() == "Feminino")
+                    {
+                        radioButtonFem.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonMasc.Checked = true;
+                    }
+                    byte[] foto = (byte[])tabela.Rows[0]["Foto"];
+                    MemoryStream fotostream = new MemoryStream(foto);
+                    pictureBoxAluno.Image = Image.FromStream(fotostream);
                 }
-                else
-                {
-                    radioButtonMasc.Checked = true;
-                }
-                byte[] foto = (byte[]) tabela.Rows[0]["Foto"];
-                MemoryStream fotostream = new MemoryStream(foto);
-                pictureBoxAluno.Image = Image.FromStream(fotostream);
+            } catch (Exception execao)
+            {
+                MessageBox.Show("Digite uma ID válida!", "ID inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -167,6 +173,14 @@ namespace GestorDeEstudantes
                 {
                     MessageBox.Show("Aluno não apagado!","Apagar Estudante", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void textBoxId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
             }
         }
     }
