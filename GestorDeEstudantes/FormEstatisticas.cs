@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,36 +29,40 @@ namespace GestorDeEstudantes
             corPainelMeninas = panelMeninas.BackColor;
         }
 
-        private void panelMeninas_MouseEnter(object sender, EventArgs e)
+        private void labelEstu_MouseEnter(object sender, EventArgs e)
         {
-            panelMeninas.BackColor = Color.White;
+            panelTotaldeEstu.BackColor = Color.Black;
+            labelEstu.ForeColor = corPainelTotal;
+        }
+
+        private void labelEstu_MouseLeave(object sender, EventArgs e)
+        {
+            panelTotaldeEstu.BackColor = corPainelTotal;
+            labelEstu.ForeColor = Color.Black;
+        }
+
+        private void labelMeninos_MouseEnter(object sender, EventArgs e)
+        {
+            panelMeninos.BackColor = Color.Cyan;
+            labelMeninos.ForeColor = corPainelMeninos;
+        }
+
+        private void labelMeninos_MouseLeave(object sender, EventArgs e)
+        {
+            panelMeninos.BackColor = corPainelMeninos;
+            labelMeninos.ForeColor= Color.Cyan;
+        }
+
+        private void labelMeninas_MouseEnter(object sender, EventArgs e)
+        {
+            panelMeninas.BackColor = Color.DeepPink;
             labelMeninas.ForeColor = corPainelMeninas;
         }
 
-        private void panelMeninas_MouseLeave(object sender, EventArgs e)
+        private void labelMeninas_MouseLeave(object sender, EventArgs e)
         {
-            panelMeninos.BackColor = corPainelMeninas
-            label
-        }
-
-        private void panelMeninos_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelMeninos_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelTotaldeEstu_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelTotaldeEstu_MouseLeave(object sender, EventArgs e)
-        {
-
+            panelMeninas.BackColor = corPainelMeninas;
+            labelMeninas.ForeColor= Color.DeepPink;
         }
     }
 }
