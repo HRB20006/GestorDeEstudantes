@@ -90,5 +90,25 @@ string telefone, string genero, string endereco, MemoryStream foto)
                 return false;
             }
         }
+        public string fazerContagem(string pesquisa)
+        {
+            MySqlCommand Comando = new MySqlCommand(pesquisa, meuNamcoDeDados.getConexao);
+            meuNamcoDeDados.abrirconexao();
+            string contagem = Comando.ExecuteScalar().ToString();
+            meuNamcoDeDados.fecharconexao();
+            return contagem;
+        }
+        public string totalDeEstudantes()
+        {
+            return fazerContagem("SELECT COUNT(*) FROM `estudantes`");
+        }
+        public string totalDeEstudantesMeninos()
+        {
+            return fazerContagem("SELECT COUNT(*) FROM `estudantes` WHERE `genero`='Masculino'");
+        }
+        public string totalDeEstudantesMeninas()
+        {
+            return fazerContagem("SELECT COUNT(*) FROM `estudantes` WHERE `genero`='Feminino'");
+        }
     }
 }

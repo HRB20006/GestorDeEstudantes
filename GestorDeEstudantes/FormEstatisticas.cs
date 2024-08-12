@@ -27,6 +27,15 @@ namespace GestorDeEstudantes
             corPainelTotal = panelTotaldeEstu.BackColor;
             corPainelMeninos = panelMeninos.BackColor;
             corPainelMeninas = panelMeninas.BackColor;
+            Estudante estudante = new Estudante();
+            double totalEstudantes = Convert.ToDouble(estudante.totalDeEstudantes());
+            double totalMeninos = Convert.ToDouble(estudante.totalDeEstudantesMeninos());
+            double totalMeninas = Convert.ToDouble(estudante.totalDeEstudantesMeninas());
+            double porcentagemMeninos = totalMeninos * 100 / totalEstudantes;
+            double porcentagemMeninas = totalMeninas * 100 / totalEstudantes;
+            labelEstu.Text = "Total de Estudantes: " + totalEstudantes.ToString();
+            labelMeninos.Text = "Total de Meninos: " + porcentagemMeninos.ToString() + "%";
+            labelMeninas.Text = "Total de Meninas: " + porcentagemMeninas.ToString() + "%";
         }
 
         private void labelEstu_MouseEnter(object sender, EventArgs e)
