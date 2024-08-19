@@ -48,7 +48,8 @@ namespace GestorDeEstudantes
 
         private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormGerenciarAlunos formGerenciarAlunos = new FormGerenciarAlunos();
+            formGerenciarAlunos.Show(this);
         }
 
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
