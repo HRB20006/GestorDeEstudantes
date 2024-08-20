@@ -55,7 +55,7 @@
             this.dataGridViewLista = new System.Windows.Forms.DataGridView();
             this.buttonBuscarDado = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDado = new System.Windows.Forms.TextBox();
             this.buttonIncluir = new System.Windows.Forms.Button();
             this.buttonRedef = new System.Windows.Forms.Button();
             this.labelTotalAlunos = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.buttonBuscar.TabIndex = 60;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // label7
             // 
@@ -129,6 +130,7 @@
             this.buttonEnviarFoto.TabIndex = 55;
             this.buttonEnviarFoto.Text = "Enviar Foto";
             this.buttonEnviarFoto.UseVisualStyleBackColor = false;
+            this.buttonEnviarFoto.Click += new System.EventHandler(this.buttonEnviarFoto_Click);
             // 
             // pictureBoxAluno
             // 
@@ -288,6 +290,7 @@
             this.buttonBaixar.TabIndex = 61;
             this.buttonBaixar.Text = "⇩";
             this.buttonBaixar.UseVisualStyleBackColor = false;
+            this.buttonBaixar.Click += new System.EventHandler(this.buttonBaixar_Click);
             // 
             // buttonAtua
             // 
@@ -322,6 +325,7 @@
             this.buttonBuscarDado.TabIndex = 66;
             this.buttonBuscarDado.Text = "Buscar";
             this.buttonBuscarDado.UseVisualStyleBackColor = false;
+            this.buttonBuscarDado.Click += new System.EventHandler(this.buttonBuscarDado_Click);
             // 
             // label8
             // 
@@ -333,13 +337,13 @@
             this.label8.TabIndex = 65;
             this.label8.Text = "Inserir dado:";
             // 
-            // textBox1
+            // textBoxDado
             // 
-            this.textBox1.Location = new System.Drawing.Point(823, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 28);
-            this.textBox1.TabIndex = 64;
+            this.textBoxDado.Location = new System.Drawing.Point(823, 4);
+            this.textBoxDado.Multiline = true;
+            this.textBoxDado.Name = "textBoxDado";
+            this.textBoxDado.Size = new System.Drawing.Size(147, 28);
+            this.textBoxDado.TabIndex = 64;
             // 
             // buttonIncluir
             // 
@@ -384,7 +388,7 @@
             this.Controls.Add(this.buttonIncluir);
             this.Controls.Add(this.buttonRedef);
             this.Controls.Add(this.buttonBuscarDado);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDado);
             this.Controls.Add(this.buttonAtua);
             this.Controls.Add(this.dataGridViewLista);
             this.Controls.Add(this.buttonBaixar);
@@ -452,7 +456,7 @@
         private System.Windows.Forms.DataGridView dataGridViewLista;
         private System.Windows.Forms.Button buttonBuscarDado;
         private System.Windows.Forms.Label label8;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox textBoxDado;
         private System.Windows.Forms.Button buttonIncluir;
         private System.Windows.Forms.Button buttonRedef;
         private System.Windows.Forms.Label labelTotalAlunos;

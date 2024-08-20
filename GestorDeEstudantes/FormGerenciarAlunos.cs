@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -69,6 +70,46 @@ namespace GestorDeEstudantes
             textBoxTel.Text = "";
             textBoxEnde.Text = "";
             pictureBoxAluno.Image = null;
+        }
+
+        private void buttonEnviarFoto_Click(object sender, EventArgs e)
+        {
+            {
+                OpenFileDialog procurarFoto = new OpenFileDialog();
+
+                procurarFoto.Filter = "Selecione a foto (*.jpg;*.png;*.jpeg;*.gif)|*.jpg;*.png;*.jpeg;*.gif";
+
+                if (procurarFoto.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxAluno.Image = Image.FromFile(procurarFoto.FileName);
+                }
+            }
+        }
+
+        private void buttonBaixar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog salvarFoto = new SaveFileDialog();
+            salvarFoto.FileName = "Aluno_" + textBoxId.Text;
+            if (pictureBoxAluno.Image == null)
+            {
+                MessageBox.Show("Não tem foto para baixar.");
+            }
+            else 
+            {
+                pictureBoxAluno.Image.Save(salvarFoto.FileName + ("." + ImageFormat.Jpeg.ToString()));
+            }
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonBuscarDado_Click(object sender, EventArgs e)
+        {
+            string pesquisa = "SELECT * FROM `estudantes` WHERE CONCAT(`nome`,`sobrenome`,`endereco`) lIKE'%"+textBoxDado.Text+"%'"; 
+            MySqlCommand comando = new MySqlCommand(pesquisa);
+            preencheTabela(comando);
         }
     }
 }
