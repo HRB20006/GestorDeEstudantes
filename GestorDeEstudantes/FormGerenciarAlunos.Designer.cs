@@ -106,6 +106,7 @@
             this.buttonSalvar.TabIndex = 57;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonRemo
             // 
@@ -118,6 +119,7 @@
             this.buttonRemo.TabIndex = 56;
             this.buttonRemo.Text = "Remover";
             this.buttonRemo.UseVisualStyleBackColor = false;
+            this.buttonRemo.Click += new System.EventHandler(this.buttonRemo_Click);
             // 
             // buttonEnviarFoto
             // 
@@ -303,6 +305,7 @@
             this.buttonAtua.TabIndex = 63;
             this.buttonAtua.Text = "Atualizar";
             this.buttonAtua.UseVisualStyleBackColor = false;
+            this.buttonAtua.Click += new System.EventHandler(this.buttonAtua_Click);
             // 
             // dataGridViewLista
             // 
@@ -356,6 +359,7 @@
             this.buttonIncluir.TabIndex = 68;
             this.buttonIncluir.Text = "Incluir";
             this.buttonIncluir.UseVisualStyleBackColor = false;
+            this.buttonIncluir.Click += new System.EventHandler(this.buttonIncluir_Click);
             // 
             // buttonRedef
             // 
