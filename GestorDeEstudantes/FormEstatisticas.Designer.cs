@@ -107,7 +107,7 @@
             this.Controls.Add(this.panelMeninos);
             this.Controls.Add(this.panelTotaldeEstu);
             this.Name = "FormEstatisticas";
-            this.Text = "FormEstatisticas";
+            this.Text = "Estatisticas";
             this.Load += new System.EventHandler(this.FormEstatisticas_Load);
             this.panelTotaldeEstu.ResumeLayout(false);
             this.panelTotaldeEstu.PerformLayout();

@@ -65,7 +65,7 @@
             this.Controls.Add(this.buttonAtua);
             this.Controls.Add(this.dataGridViewLista);
             this.Name = "FormListarEstudantes";
-            this.Text = "FormListarEstudantes";
+            this.Text = "Lista";
             this.Load += new System.EventHandler(this.FormListarEstudantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLista)).EndInit();
             this.ResumeLayout(false);

@@ -300,7 +300,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label1);
             this.Name = "FormAtualizarApagarEstudante";
-            this.Text = "FormAtualizarApagarEstudante";
+            this.Text = "Atualizar Dados";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAluno)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

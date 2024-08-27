@@ -53,5 +53,47 @@ namespace GestorDeEstudantes
             dateTimePickerIni.Enabled = true;
             dateTimePickerFim.Enabled = true;
         }
+
+        private void buttonFiltro_Click(object sender, EventArgs e)
+        {
+            MySqlCommand comando;
+            string busca;
+            if (radioButtonS.Checked == true)
+            {
+                string dataInicial = dateTimePickerIni.Value.ToString("dd-MM-yyyy");
+                string dataFinal = dateTimePickerFim.Value.ToString("dd-MM-yyyy");
+                if (radioButtonMasc.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN '" + dataInicial + "' AND '" + dataFinal + "' AND genero = 'Masculino'";
+                }
+                else if (radioButtonFem.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN '" + dataInicial + "' AND '" + dataFinal + "' AND genero = 'Feminino'";
+                }
+                else
+                {
+                    busca = "SELECT * FROM `estudantes` WHERE `nascimento` BETWEEN '" + dataInicial + "' AND '" + dataFinal + "'";
+                }
+                comando = new MySqlCommand(busca);
+                preencheTabela(comando);
+            }
+            else
+            {
+                if (radioButtonMasc.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes`";
+                }
+                else if (radioButtonFem.Checked)
+                {
+                    busca = "SELECT * FROM `estudantes`";
+                }
+                else
+                {
+                    busca = "SELECT * FROM `estudantes`";
+                }
+                comando = new MySqlCommand(busca);
+                preencheTabela(comando);
+            }
+        }
     }
 }

@@ -93,6 +93,7 @@
             this.buttonFiltro.TabIndex = 60;
             this.buttonFiltro.Text = "Filtrar";
             this.buttonFiltro.UseVisualStyleBackColor = false;
+            this.buttonFiltro.Click += new System.EventHandler(this.buttonFiltro_Click);
             // 
             // groupBox2
             // 

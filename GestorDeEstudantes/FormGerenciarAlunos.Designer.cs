@@ -420,7 +420,7 @@
             this.Controls.Add(this.label8);
             this.Name = "FormGerenciarAlunos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormGerenciarAlunos";
+            this.Text = "Gerenciar";
             this.Load += new System.EventHandler(this.FormGerenciarAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAluno)).EndInit();
             this.groupBox1.ResumeLayout(false);
