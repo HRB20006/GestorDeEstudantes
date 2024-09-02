@@ -95,5 +95,41 @@ namespace GestorDeEstudantes
                 preencheTabela(comando);
             }
         }
+
+        private void buttonImpri_Click(object sender, EventArgs e)
+        {
+            string camimho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +@"\lista_de_estudantes.txt";
+            using (var escritor = new StreamWriter (camimho))
+            {
+                if (File.Exists (camimho) == false) 
+                {
+                    File.Create (camimho);
+                }
+                DateTime nascimento;
+                for (int i = 0; i < dataGridViewLista.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridViewLista.Rows.Count; j++)
+                    {
+                        if (j == 3) 
+                        {
+                            nascimento = Convert.ToDateTime(dataGridViewLista.Rows[i].Cells[j].Value.ToString());
+                            escritor.Write("\t" + nascimento.ToString("dd-MM-yyyy") + "\t" + "|");
+                        }
+                        else if (j == dataGridViewLista.Columns.Count - 2)
+                        {
+                            escritor.Write("\t" + dataGridViewLista.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                        }
+                        else
+                        {
+                            escritor.Write("\t" + dataGridViewLista.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                        }
+                        
+                    }
+                    escritor.WriteLine();
+                }
+                escritor.Close();
+                MessageBox.Show("Dados salvos");
+            }
+        }
     }
 }

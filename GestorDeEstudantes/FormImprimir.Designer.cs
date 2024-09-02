@@ -68,6 +68,7 @@
             this.buttonImpri.TabIndex = 58;
             this.buttonImpri.Text = "Imprimir";
             this.buttonImpri.UseVisualStyleBackColor = false;
+            this.buttonImpri.Click += new System.EventHandler(this.buttonImpri_Click);
             // 
             // groupBox1
             // 
